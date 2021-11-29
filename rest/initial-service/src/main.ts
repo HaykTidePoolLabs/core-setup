@@ -11,13 +11,15 @@ async function bootstrap() {
   app.enableCors();
   app.useGlobalPipes(new ValidationPipe());
 
-  const config = new DocumentBuilder()
-      .setTitle('API Documentation')
-      .setDescription('The API description')
-      .setVersion('1.0')
-      .build();
-  const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
+  if ('production' !== configService.get('NODE_ENV')) {
+    const config = new DocumentBuilder()
+        .setTitle('API Documentation')
+        .setDescription('The API description')
+        .setVersion('1.0')
+        .build();
+    const document = SwaggerModule.createDocument(app, config);
+    SwaggerModule.setup('api-documentation', app, document);
+  }
 
   // @ts-ignore
   const port = configService.get('PORT');
