@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { configValidationSchema } from "./config/config.schema";
 import { PostgresDatabaseProviderModule } from "./providers/database/Postgres";
+import { UserModule } from './modules/user/user.module';
 
 @Module({
   imports: [
@@ -11,6 +12,7 @@ import { PostgresDatabaseProviderModule } from "./providers/database/Postgres";
       isGlobal: true,
     }),
     PostgresDatabaseProviderModule,
+    UserModule,
   ],
 })
 export class AppModule {}
