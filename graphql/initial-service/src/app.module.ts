@@ -4,6 +4,7 @@ import { configValidationSchema } from './config/config.schema';
 import { PostgresDatabaseProviderModule } from './providers/database/Postgres';
 import { GraphGLProviderModule } from './providers/graphql';
 import { UserModule } from './modules/user/user.module';
+import { PostsModule } from './modules/posts/posts.module';
 
 @Module({
     imports: [
@@ -15,6 +16,7 @@ import { UserModule } from './modules/user/user.module';
         PostgresDatabaseProviderModule,
         GraphGLProviderModule,
         UserModule,
+        PostsModule,
     ],
     providers: [],
 })

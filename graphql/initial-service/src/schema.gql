@@ -2,15 +2,32 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+input CreatePostInput {
+  name: String!
+  user: CreateUserRelationInput!
+}
+
 input CreateUserInput {
   name: String!
 }
 
+input CreateUserRelationInput {
+  id: Float
+}
+
 type Mutation {
+  createPost(createPostInput: CreatePostInput!): Posts!
   createUser(createUserInput: CreateUserInput!): User!
 }
 
+type Posts {
+  id: Int!
+  name: String
+}
+
 type Query {
+  post(id: Float!): Posts!
+  posts: [Posts!]!
   user(id: Float!): User!
   users: [User!]!
 }
@@ -18,4 +35,5 @@ type Query {
 type User {
   id: Int!
   name: String
+  posts: [Posts!]!
 }

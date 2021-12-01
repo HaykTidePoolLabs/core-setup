@@ -1,12 +1,13 @@
-import {Args, Mutation, Query, Resolver} from '@nestjs/graphql';
+import {Args, Context, Mutation, Parent, Query, ResolveField, Resolver} from '@nestjs/graphql';
 import { User } from './user.type';
 import {UserService} from './user.service';
 import {CreateUserInput} from "./user.input";
+import {Posts} from "../posts/posts.type";
 
 @Resolver(of => User)
 export class UserResolver {
     constructor(
-        private userService: UserService
+        private userService: UserService,
     ) {
     }
 
@@ -27,5 +28,14 @@ export class UserResolver {
         @Args('createUserInput') createUserInput: CreateUserInput
     ){
         return this.userService.createUser(createUserInput);
+    }
+
+    @ResolveField('posts', returns => [Posts])
+    async posts(
+        @Parent() user: User,
+        @Context('loaders') loaders
+    ) {
+        const { id } = user;
+        return loaders.postsLoader.load(id);
     }
 }
