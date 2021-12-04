@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "script": "./dist/main.js",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    {
+      "script": "./dist/listener.js",
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}
