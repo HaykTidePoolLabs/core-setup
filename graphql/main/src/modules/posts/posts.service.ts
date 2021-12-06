@@ -1,6 +1,5 @@
 import {Inject, Injectable} from '@nestjs/common';
 import {In, Repository} from 'typeorm';
-import {Cron} from "@nestjs/schedule";
 import {InjectRepository} from '@nestjs/typeorm';
 import {ClientProxy} from '@nestjs/microservices';
 import {Posts} from './posts.entity';
@@ -40,9 +39,4 @@ export class PostsService {
         })
     }
 
-    @Cron('*/3 * * * * *', {
-    })
-    triggerNotifications() {
-        console.log('aaa', new  Date())
-    }
 }
