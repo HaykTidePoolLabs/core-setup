@@ -1,0 +1,3 @@
+
+
+export const TEST_GRAPHQL_SERVICE = 'TEST_GRAPHQL_SERVICE';

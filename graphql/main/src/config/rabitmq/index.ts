@@ -1,5 +1,6 @@
 import * as dotenv from 'dotenv';
 import * as path from 'path';
+import { TEST_REST_SERVICE } from '../../common/constants/microservices'
 if (!(process.env.NODE_ENV === 'production')) {
     dotenv.config({ path: path.join(__dirname, '../../../', '.env.development') });
 }
@@ -16,7 +17,7 @@ export const options = {
 
 export const microservicesList = [
     {
-        name: 'TEST_REST_SERVICE',
+        name: TEST_REST_SERVICE,
         options: {
             urls: [RABBIT_MQ_URL],
             queue: 'test_rest_queue',

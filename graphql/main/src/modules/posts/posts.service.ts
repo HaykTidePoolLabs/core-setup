@@ -1,15 +1,16 @@
 import {Inject, Injectable} from '@nestjs/common';
 import {In, Repository} from 'typeorm';
 import {InjectRepository} from '@nestjs/typeorm';
+import {ClientProxy} from '@nestjs/microservices';
 import {Posts} from './posts.entity';
 import {CreatePostInput} from './posts.input';
-import {ClientProxy} from '@nestjs/microservices';
+import {TEST_REST_SERVICE} from '../../common/constants/microservices';
 
 @Injectable()
 export class PostsService {
     constructor(
         @InjectRepository(Posts) private postsRepository: Repository<Posts>,
-        // @Inject('TEST_REST_SERVICE') private readonly client: ClientProxy
+        // @Inject(TEST_REST_SERVICE) private readonly client: ClientProxy
     ) {
     }
 
