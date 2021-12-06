@@ -3,13 +3,15 @@
     {
       "script": "./dist/main.js",
       "env": {
-        "NODE_ENV": "production"
+        "NODE_ENV": "production",
+        "SCHEDULE_ENV": "run"
       }
     },
     {
       "script": "./dist/listener.js",
       "env": {
-        "NODE_ENV": "production"
+        "NODE_ENV": "production",
+        "SCHEDULE_ENV": ""
       }
     }
   ]
