@@ -1,8 +1,8 @@
-import {Module} from "@nestjs/common";
-import {TypeOrmModule} from "@nestjs/typeorm";
-import { ConnectionOptions } from "typeorm";
-import {ConfigModule, ConfigService} from "@nestjs/config";
-import { postgresConfig } from "../../config/database/postgres";
+import {Module} from '@nestjs/common';
+import {TypeOrmModule} from '@nestjs/typeorm';
+import { ConnectionOptions } from 'typeorm';
+import {ConfigModule, ConfigService} from '@nestjs/config';
+import { postgresConfig } from '../../config/database/postgres';
 
 
 @Module({

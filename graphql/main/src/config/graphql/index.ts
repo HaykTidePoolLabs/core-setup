@@ -1,4 +1,4 @@
-import createPostsLoader, { PostsModule, PostsService } from "../../modules/posts/posts.loader";
+import createPostsLoader, { PostsModule, PostsService } from '../../modules/posts/posts.loader';
 
 const graphQLConfig = {
     debug: false,

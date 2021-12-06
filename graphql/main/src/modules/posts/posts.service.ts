@@ -1,9 +1,9 @@
 import {Inject, Injectable} from '@nestjs/common';
-import {In, Repository} from "typeorm";
-import {InjectRepository} from "@nestjs/typeorm";
-import {Posts} from "./posts.entity";
-import {CreatePostInput} from "./posts.input";
-import {ClientProxy} from "@nestjs/microservices";
+import {In, Repository} from 'typeorm';
+import {InjectRepository} from '@nestjs/typeorm';
+import {Posts} from './posts.entity';
+import {CreatePostInput} from './posts.input';
+import {ClientProxy} from '@nestjs/microservices';
 
 @Injectable()
 export class PostsService {
@@ -14,6 +14,7 @@ export class PostsService {
     }
 
     async getPost(id: number): Promise<Posts> {
+        // this.client.emit('get_user', '');
         return this.postsRepository.findOne({ id })
     }
 

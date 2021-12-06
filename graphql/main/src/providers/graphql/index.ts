@@ -1,6 +1,6 @@
-import {Module} from "@nestjs/common";
-import {GraphQLModule} from "@nestjs/graphql";
-import graphQLConfig from "../../config/graphql";
+import {Module} from '@nestjs/common';
+import {GraphQLModule} from '@nestjs/graphql';
+import graphQLConfig from '../../config/graphql';
 
 @Module({
     imports: [

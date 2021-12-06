@@ -1,4 +1,4 @@
-import { ConfigService } from "@nestjs/config";
+import { ConfigService } from '@nestjs/config';
 import * as dotenv from 'dotenv';
 import * as path from 'path';
 if (!(process.env.NODE_ENV === 'production')) {

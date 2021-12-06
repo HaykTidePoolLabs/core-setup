@@ -1,8 +1,8 @@
 import {Args, Context, Mutation, Parent, Query, ResolveField, Resolver} from '@nestjs/graphql';
 import { User } from './user.type';
 import {UserService} from './user.service';
-import {CreateUserInput} from "./user.input";
-import {Posts} from "../posts/posts.type";
+import {CreateUserInput} from './user.input';
+import {Posts} from '../posts/posts.type';
 
 @Resolver(of => User)
 export class UserResolver {
