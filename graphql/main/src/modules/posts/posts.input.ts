@@ -4,7 +4,7 @@ import { MinLength } from 'class-validator';
 @InputType()
 class CreateUserRelationInput {
     @Field({ nullable: true })
-    id: number
+    id: string
 }
 
 @InputType()

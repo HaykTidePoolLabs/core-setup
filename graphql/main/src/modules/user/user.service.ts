@@ -11,7 +11,7 @@ export class UserService {
         @InjectRepository(User) private userRepository: Repository<User>,
     ) {}
 
-    async getUser(id: number): Promise<User> {
+    async getUser(id: string): Promise<User> {
         return this.userRepository.findOne({ id });
     }
 

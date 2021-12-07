@@ -12,7 +12,7 @@ export class PostsResolver {
 
     @Query(returns => Posts)
     async post(
-        @Args('id') id: number
+        @Args('id') id: string
     ) {
         return this.postService.getPost(id);
     }

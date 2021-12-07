@@ -14,7 +14,7 @@ export class PostsService {
     ) {
     }
 
-    async getPost(id: number): Promise<Posts> {
+    async getPost(id: string): Promise<Posts> {
         // this.client.emit('get_user', '');
         return this.postsRepository.findOne({ id })
     }

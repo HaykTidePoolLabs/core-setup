@@ -4,8 +4,8 @@ import {Posts} from '../posts/posts.type';
 
 @ObjectType()
 export class User {
-    @Field(type => Int)
-    id: number;
+    @Field(type => String)
+    id: string;
 
     @Field({ nullable: true })
     name?: string;

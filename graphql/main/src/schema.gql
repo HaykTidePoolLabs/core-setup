@@ -12,7 +12,7 @@ input CreateUserInput {
 }
 
 input CreateUserRelationInput {
-  id: Float
+  id: String
 }
 
 type Mutation {
@@ -21,19 +21,19 @@ type Mutation {
 }
 
 type Posts {
-  id: Int!
+  id: String!
   name: String
 }
 
 type Query {
-  post(id: Float!): Posts!
+  post(id: String!): Posts!
   posts: [Posts!]!
-  user(id: Float!): User!
+  user(id: String!): User!
   users: [User!]!
 }
 
 type User {
-  id: Int!
+  id: String!
   name: String
   posts: [Posts!]!
 }
