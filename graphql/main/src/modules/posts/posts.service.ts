@@ -20,6 +20,11 @@ export class PostsService {
     }
 
     async getPosts(params: {}): Promise<Posts[]> {
+        // const res = await new Promise(resolve => {
+        //     this.client.send('get_user', 5000).subscribe((value: any) => {
+        //         resolve(value);
+        //     })
+        // });
         return this.postsRepository.find(params)
     }
 
