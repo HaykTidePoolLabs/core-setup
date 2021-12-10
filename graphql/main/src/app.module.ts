@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { configValidationSchema } from './config/config.schema';
+import { RedisCacheProviderModule } from "./providers/cache/redis";
 import { PostgresDatabaseProviderModule } from './providers/database/Postgres';
 import { GraphGLProviderModule } from './providers/graphql';
 import { MicroservicesProviderModule } from './providers/microservices';
@@ -14,6 +15,7 @@ import { PostsModule } from './modules/posts/posts.module';
             validationSchema: configValidationSchema,
             isGlobal: true,
         }),
+        RedisCacheProviderModule,
         MicroservicesProviderModule,
         PostgresDatabaseProviderModule,
         GraphGLProviderModule,

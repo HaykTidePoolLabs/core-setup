@@ -1,0 +1,28 @@
+version: '2'
+services:
+  redis:
+    image: "redis:alpine"
+    container_name: redis
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+#      - REDIS_PASSWORD=yes
+    ports:
+      - 6379:6379
+    networks:
+      - redis-network
+  rabbitmq:
+    image: rabbitmq:3.8.9-management-alpine
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: pass
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - amqp-network
+networks:
+  redis-network:
+    driver: bridge
+  amqp-network:
+    driver: bridge
