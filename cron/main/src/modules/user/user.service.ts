@@ -1,6 +1,6 @@
-import {Injectable} from '@nestjs/common';
+import {Injectable, UseInterceptors} from '@nestjs/common';
 import {Cron} from "@nestjs/schedule";
-
+import {SentryOverwatchAsync} from "../../common/decorators/sentry-overwatch.decorator";
 
 @Injectable()
 export class UserService {
@@ -11,7 +11,9 @@ export class UserService {
 
   @Cron('*/3 * * * * *', {
   })
+  @SentryOverwatchAsync()
   triggerNotifications() {
+    // throw new Error('ooo')
     console.log('aaa', new  Date())
   }
 }
